@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <title><%= title %></title>
+  </head>
+  <body class="p-3 mb-2 bg-primary text-white">
+      <header>
+          <%- include('../partials/header') %>
+          <% if(user1.length) {%>
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">House Number</th>
+                  </tr>
+                </thead>
+                <% let index=1; %>
+                <% user1.forEach(function(user1){ %>
+                  <tbody>
+                    <tr>
+                      <form action="/change" method="post">
+                        
+                        <th scope="row"><%= index %></th> <% index++ %>
+                            <input type="hidden" name="id" value=<%= user1._id %>>
+                            <td><input type="text" name='firstName' value=<%= user1.firstName %>></td>
+                            <td><input type="text" name="lastName" value=<%= user1.lastName %>></td>
+                            <td><input type="number" name="phone" value=<%= user1.phone %>></td>
+                            <td><input type="text" name="city" value=<%= user1.adress.city %>></td>
+                            <td><input type="text" name="state" value=<%= user1.adress.state %>></td>
+                            <td><input type="number" name="houseNumber" value=<%= user1.adress.houseNumber %>></td>
+                            <td><button type="submit" class="btn btn-success">edit</button></td>
+                          </form> 
+                            <form action="/delete" method="post">
+                              <input type="hidden" name="id2" value=<%= user1._id %>>
+                              <td><button type="submit" class="btn btn-danger">delete</button></td>
+                            </form>
+                    </tr>
+                    </tbody>
+                <% }); %>
+            <% }else{ %>
+                <h1>heraxosner chkan</h1>
+            <% }; %>
+      </header>
+        <%- include('../partials/lib') %>
+  </body>
+</html>
