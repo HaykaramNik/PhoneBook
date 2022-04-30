@@ -1,0 +1,54 @@
+<form class="needs-validation" method="post" novalidate>
+    <div class="p-3 mb-2 bg-info text-white">
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom01">First name</label>
+        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="firstName" required>
+        <div class="valid-feedback">
+        Looks good!
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" name="lastName" required>
+        <div class="valid-feedback">
+        Looks good!
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Phone Number</label>
+        <div class="input-group">
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Phone Number" aria-describedby="inputGroupPrepend" name="phone" pattern="[0]{1}[0-9]{8}" 
+title="Phone number with 7-9 and remaing 9 digit with 0-9">
+        <div class="invalid-feedback">
+            Please choose a phone number.
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom03">City</label>
+        <input type="text" class="form-control" id="validationCustom03" placeholder="City" name="city" required>
+        <div class="invalid-feedback">
+        Please provide a valid city.
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label for="validationCustom04">State</label>
+        <input type="text" class="form-control" id="validationCustom04" placeholder="State" name="state" required>
+        <div class="invalid-feedback">
+        Please provide a valid state.
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label for="validationCustom05">House Number</label>
+        <input type="number" class="form-control" id="validationCustom05" placeholder="House Number" name="houseNumber" required>
+        <div class="invalid-feedback">
+        Please provide a valid house number.
+        </div>
+    </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+</form>
